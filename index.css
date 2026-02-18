@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+/* 1. Typography Imports */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400&family=Inter:wght@400;600;700&display=swap');
+
+@theme {
+    /* 2. Color Palette - XOTC Cyberpunk */
+    --color-primary: #ADFF00;
+    /* Neon Lime */
+    --color-primary-hover: #8CCF00;
+
+    --color-cta: #ADFF00;
+    /* Neon Lime (Same as primary for consistency in this theme) */
+    --color-cta-hover: #D4FF5C;
+    /* Brighter/Whiter Lime */
+
+    --color-secondary: #00D1FF;
+    /* Tech Cyan */
+
+    --color-background: #050505;
+    /* Deep Black */
+    --color-surface: #0F1215;
+    /* Dark Panel */
+
+    --color-text: #FFFFFF;
+    /* Pure White */
+    --color-text-dim: #8899A6;
+    /* Tech Gray */
+
+    --color-border: #333333;
+    /* Dark Grey Border */
+    --color-accent: #00D1FF;
+    /* Cyan Accent */
+
+    /* Semantic Colors */
+    --color-success: #ADFF00;
+    --color-error: #FF0055;
+    --color-warning: #FFCC00;
+
+    /* 3. Typography Tokens */
+    --font-display: "Orbitron", ui-sans-serif, system-ui, sans-serif;
+    --font-body: "Rajdhani", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+    /* 4. Animations */
+    --animate-float: float 6s ease-in-out infinite;
+    --animate-pulse-glow: pulseGlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    --animate-scanline: scanline 8s linear infinite;
+}
+
+/* 5. Keyframes */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 10px var(--color-primary);
+    }
+
+    50% {
+        opacity: .7;
+        box-shadow: 0 0 20px var(--color-primary);
+    }
+}
+
+@keyframes scanline {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+/* 6. Base Styles */
+@layer base {
+    body {
+        background-color: var(--color-background);
+        color: var(--color-text);
+        font-family: var(--font-body);
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-display);
+        color: var(--color-text);
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+    }
+
+    code,
+    pre {
+        font-family: var(--font-mono);
+    }
+}
+
+/* 7. Utility Classes */
+@layer utilities {
+    .clip-corner {
+        clip-path: polygon(10px 0, 100% 0,
+                100% calc(100% - 10px),
+                calc(100% - 10px) 100%,
+                0 100%,
+                0 10px);
+    }
+
+    .clip-corner-sm {
+        clip-path: polygon(5px 0, 100% 0,
+                100% calc(100% - 5px),
+                calc(100% - 5px) 100%,
+                0 100%,
+                0 5px);
+    }
+
+    .glass-panel {
+        background: rgba(15, 18, 21, 0.8);
+        backdrop-filter: blur(8px);
+        border: 1px solid var(--color-border);
+    }
+
+    .text-glow {
+        text-shadow: 0 0 10px rgba(173, 255, 0, 0.5);
+    }
+
+    .text-glow-cyan {
+        text-shadow: 0 0 10px rgba(0, 209, 255, 0.5);
+    }
+
+    .border-glow {
+        box-shadow: 0 0 10px rgba(173, 255, 0, 0.2);
+    }
+}
+
+/* Hide Spline Branding */
+a[href*="spline.design"],
+#spline-watermark,
+#n-logo,
+[class*="spline-watermark"] {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    position: absolute !important;
+    z-index: -9999 !important;
+}

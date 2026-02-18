@@ -1,0 +1,214 @@
+.testimonial-stream-container {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    overflow: hidden;
+    font-family: var(--font-body);
+}
+
+.ts-controls {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 20;
+}
+
+.ts-control-btn {
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--color-text);
+    font-weight: 600;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    font-size: 13px;
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+.ts-control-btn:hover {
+    background: rgba(173, 255, 0, 0.1);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.ts-speed-indicator {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: var(--color-primary);
+    font-size: 14px;
+    background: rgba(173, 255, 0, 0.05);
+    padding: 8px 16px;
+    border: 1px solid var(--color-primary);
+    backdrop-filter: blur(5px);
+    z-index: 20;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.ts-card-stream {
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    overflow: visible;
+    z-index: 10;
+}
+
+.ts-card-line {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    white-space: nowrap;
+    cursor: grab;
+    user-select: none;
+    will-change: transform;
+    padding-left: 50vw;
+}
+
+.ts-card-line:active {
+    cursor: grabbing;
+}
+
+.ts-card-wrapper {
+    position: relative;
+    width: 400px;
+    height: 250px;
+    flex-shrink: 0;
+}
+
+.ts-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 250px;
+    overflow: hidden;
+}
+
+.ts-card-normal {
+    background: rgba(15, 18, 21, 0.8);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+    color: white;
+    z-index: 2;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    clip-path: inset(0 0 0 var(--clip-right, 0%));
+}
+
+.ts-card-ascii {
+    background: #050505;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 250px;
+    overflow: hidden;
+    border: 1px solid var(--color-primary);
+    clip-path: inset(0 calc(100% - var(--clip-left, 0%)) 0 0);
+}
+
+.ts-ascii-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--color-primary);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    line-height: 12px;
+    overflow: hidden;
+    white-space: pre-wrap;
+    word-break: break-all;
+    padding: 10px;
+    opacity: 0.3;
+}
+
+/* Scanner Beam */
+.ts-scanner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 2px;
+    height: 400px;
+    background: linear-gradient(to bottom,
+            transparent,
+            rgba(173, 255, 0, 0.8),
+            #ADFF00,
+            rgba(173, 255, 0, 0.8),
+            transparent);
+    box-shadow: 0 0 20px rgba(173, 255, 0, 0.5);
+    z-index: 15;
+    pointer-events: none;
+}
+
+.ts-scan-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(173, 255, 0, 0.2),
+            transparent);
+    animation: scanEffect 0.6s ease-out;
+    pointer-events: none;
+    z-index: 5;
+}
+
+@keyframes scanEffect {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+#particleCanvas {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 400px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#scannerCanvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 400px;
+    z-index: 14;
+    pointer-events: none;
+}
