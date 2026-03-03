@@ -9,12 +9,9 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
 
           <div className="col-span-1 md:col-span-1">
-            <div className="flex items-center gap-4 mb-6">
+            <div className="flex items-center mb-6">
               <div className="h-14 w-auto">
-                <img src="/assets/logo_icon_v4.png" alt="SKIA" className="h-full w-auto object-contain" />
-              </div>
-              <div className="h-8 w-auto opacity-80">
-                <img src="/assets/logo_text_v3.png" alt="AUTOMATED SOLUTIONS" className="h-full w-auto object-contain" />
+                <img src="/assets/automated_solutionz_logo.png" alt="Automated SolutionZ" className="h-full w-auto object-contain" />
               </div>
             </div>
             <p className="text-xs text-text-dim leading-relaxed uppercase tracking-wide">

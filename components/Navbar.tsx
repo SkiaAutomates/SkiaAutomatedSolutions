@@ -31,14 +31,9 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-24">
           {/* Logo */}
-          <div className="flex items-center gap-5 cursor-pointer group" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            {/* Icon Part */}
-            <div className="h-20 w-auto">
-              <img src="/assets/logo_icon_v4.png" alt="Skia Icon" className="h-full w-auto object-contain" />
-            </div>
-            {/* Text Part */}
-            <div className="h-11 w-auto opacity-90 group-hover:opacity-100 transition-opacity">
-              <img src="/assets/logo_text_v3.png" alt="Skia Text" className="h-full w-auto object-contain" />
+          <div className="flex items-center cursor-pointer group" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <div className="h-16 w-auto opacity-90 group-hover:opacity-100 transition-opacity">
+              <img src="/assets/automated_solutionz_logo.png" alt="Automated SolutionZ Logo" className="h-full w-auto object-contain" />
             </div>
           </div>
 
