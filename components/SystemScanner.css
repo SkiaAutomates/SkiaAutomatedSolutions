@@ -281,7 +281,7 @@
 .system-scanner-wrapper #scannerCanvas {
     position: absolute;
     top: 50%;
-    left: -3px;
+    left: 0;
     transform: translateY(-50%);
     width: 100%;
     height: 300px;
