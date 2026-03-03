@@ -66,7 +66,7 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="pt-8 border-t border-white/5 text-center md:text-left flex flex-col md:flex-row justify-between items-center text-xs uppercase tracking-widest text-text-dim/50">
-          <p>&copy; {new Date().getFullYear()} Skia Automated Solutions.</p>
+          <p>&copy; {new Date().getFullYear()} Automated Solutionz.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="hover:text-white transition-colors">Privacy</a>
             <a href="#" className="hover:text-white transition-colors">Terms</a>
